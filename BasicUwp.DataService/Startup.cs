@@ -27,6 +27,10 @@ namespace BasicUwp.DataService
         {
             //添加DataContext数据库表，数据库的名字叫ContactDatabase
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("ContactDatabase"));
+            ///<summary>
+            ///添加到SQL数据库
+            ///</summary>
+            //services.AddDbContext<DataContext>(opt => opt.UseSqlServer("ContactDatabase"));
             services.AddMvc();
 
             var serviceProvider = services.BuildServiceProvider();
